@@ -5,14 +5,17 @@
 }
 
 .cs-main-container {
-    border: 0 !important;
-    border-radius: 0 !important;
-    .cs-conversation-header
-{
+    .cs-conversation-header{
         background-color: #502D3C !important;
         
         
     }
+    border: 0 !important;
+    border-radius: 1.4em !important;
+    -webkit-border-radius: 1.4em !important;
+    -moz-border-radius: 1.4em !important;
+    -ms-border-radius: 1.4em !important;
+    -o-border-radius: 1.4em !important;
 }
 
 
@@ -69,6 +72,7 @@
 
 .message-avatar {
     margin-bottom: 1em !important;
+    margin-top: 1.5em !important;
    
    
     // width: $avatar-width;
@@ -90,7 +94,7 @@
         -o-border-radius: 20% !important;
 }
 .cs-message__content {
-    background-color: #ededed  !important;  // bot message color
+    background-color: #ffffff  !important;  // bot message color
     text-align: left !important;
 }
 .cs-message--outgoing .cs-message__content {
@@ -99,6 +103,10 @@
     border-radius: 0.7em !important;
     
 }
+}
+.cs-message-list {
+    background-color: #F5F3EE !important;
+    // padding-top: 30px;
 }
 
 .cs-message-input__content-editor-wrapper {

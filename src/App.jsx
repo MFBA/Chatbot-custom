@@ -27,7 +27,7 @@ import {
 import Modal from "./Modal";
 import { faFaceSmile, faFileImage } from "@fortawesome/free-regular-svg-icons";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -45,7 +45,7 @@ function App() {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [openResponseModal, setOpenResponseModal] = useState(false);
-  const [timer, setTimer] = useState(0);
+  const [openErrorModal, setOpenErrorModal] = useState(false);
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -105,6 +105,11 @@ function App() {
           },
         ]);
         setIsTyping(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsTyping(false);
+        setOpenErrorModal(true);
       });
   }
 
@@ -132,8 +137,21 @@ function App() {
         </div>
         <MainContainer>
           <Modal
+            show={openErrorModal}
+            handleClose={() => setOpenErrorModal(false)}
+          >
+            <div className="modal-content">
+              <p style={{ color: "black" }}>
+                Sorry, there was an error with the server. Please try again
+                later.
+              </p>
+            </div>
+          </Modal>
+
+          <Modal
             show={openResponseModal}
             handleClose={() => setOpenResponseModal(false)}
+            submitbtn={true}
           >
             <div className="modal-content">
               <p style={{ color: "black" }}>Please provide your feedback</p>
@@ -236,21 +254,9 @@ function App() {
               color: "grey",
             }}
           >
-            <FontAwesomeIcon
-              icon={faFileImage}
-              size={"md"}
-              onClick={() => setOpenResponseModal(true)}
-            />
-            <FontAwesomeIcon
-              icon={faFaceSmile}
-              size={"md"}
-              onClick={() => setOpenResponseModal(true)}
-            />
-            <FontAwesomeIcon
-              icon={faPaperclip}
-              size={"md"}
-              onClick={() => setOpenResponseModal(true)}
-            />
+            <FontAwesomeIcon icon={faFileImage} size={"md"} />
+            <FontAwesomeIcon icon={faFaceSmile} size={"md"} />
+            <FontAwesomeIcon icon={faPaperclip} size={"md"} />
           </div>
           <div></div>
         </MainContainer>

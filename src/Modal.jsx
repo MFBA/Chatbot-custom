@@ -1,4 +1,4 @@
-const Modal = ({ handleClose, handleSubmit, show, children }) => {
+const Modal = ({ handleClose, handleSubmit, show, children, submitbtn }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
@@ -13,9 +13,11 @@ const Modal = ({ handleClose, handleSubmit, show, children }) => {
             margin: "0.5em",
           }}
         >
-          <button type="button" onClick={handleSubmit}>
-            Submit
-          </button>
+          {submitbtn ? (
+            <button type="button" onClick={handleSubmit}>
+              Submit
+            </button>
+          ) : null}
           <button type="button" onClick={handleClose}>
             Close
           </button>
