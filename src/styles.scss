@@ -1,0 +1,183 @@
+.cs-main-container {
+    border: 0px !important;
+    border-radius: 1em !important;
+    -webkit-border-radius: 1em !important;
+    -moz-border-radius: 1em !important;
+    -ms-border-radius: 1em !important;
+    -o-border-radius: 1em !important;
+
+    .cs-conversation-header {
+        background-color: #ffffff !important;
+        
+    }
+}
+
+
+.cs-conversation-header__content {
+    flex-grow: 0 !important;
+
+    .cs-conversation-header__user-name {
+        height: 18px !important;
+    }
+
+    .cs-conversation-header__info{
+        font-size: .7em !important; 
+        margin-right: 0em !important;
+    }
+}
+
+.cs-conversation-header__back{
+    margin-right: 1.5em !important;
+}
+
+
+.cs-conversation-header__avatar {
+    margin-right: 0.5em !important;
+    margin-top: 0.3em !important;
+    // make variable for avatar size header
+    $avatar-width : 2.1em !important; 
+    width: $avatar-width;
+    height: $avatar-width ;
+    .cs-avatar.cs-avatar--md{
+        width: $avatar-width ;
+        height: $avatar-width ;
+        min-width: $avatar-width ;
+        min-height: $avatar-width ;
+    }
+
+    .cs-avatar>img  {
+        border-radius: 20% !important;
+        -webkit-border-radius: 20% !important;
+        -moz-border-radius: 20% !important;
+        -ms-border-radius: 20% !important;
+        -o-border-radius: 20% !important;
+}
+}
+
+.cs-button--arrow {
+    color: #4565f3 !important;
+}
+
+.message-avatar {
+    margin-bottom: 1em !important;
+   
+   
+    // width: $avatar-width;
+    // height: $avatar-width ;
+    .cs-avatar.cs-avatar--md{
+        margin-top: 0.4em !important;
+        $avatar-width : 2em !important; 
+        width: $avatar-width ;
+        height: $avatar-width ;
+        min-width: $avatar-width ;
+        min-height: $avatar-width ;
+    }
+
+    .cs-avatar>img  {
+        border-radius: 20% !important;
+        -webkit-border-radius: 20% !important;
+        -moz-border-radius: 20% !important;
+        -ms-border-radius: 20% !important;
+        -o-border-radius: 20% !important;
+}
+.cs-message__content {
+    background-color: #ededed  !important;  // bot message color
+    text-align: left !important;
+}
+.cs-message--outgoing .cs-message__content {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0c5fec !important;
+    border-radius: 0.7em !important;
+    
+}
+}
+
+.cs-message-input__content-editor-wrapper {
+   
+    background-color: #fdfeff !important;
+    margin-left: 0 !important;
+    // padding: 0.6em 0.9em !important;
+    // width: 100%;
+    
+    // border-radius: 0em !important;
+    // flex-grow: 0 !important;
+}
+
+.cs-message-input__content-editor  {
+    background-color: white !important;
+    text-align: left ;
+}
+
+.cs-chat-container .cs-message-input .cs-message-input__content-editor-wrapper {
+    // margin-left: 0 !important;
+    // display: flex !important;
+    align-items: flex-start !important;
+}
+
+.cs-typing-indicator__indicator {
+    box-sizing: inherit !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // background-color: #ededed !important;
+    // position: absolute;
+    // top: -36em;
+    // margin-left: 3.5em;
+    // padding: 1em 0.9em !important;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+
+    .cs-typing-indicator__dot {
+        background-color: #303030 !important;
+       
+      
+    }
+}
+
+.cs-typing-indicator {
+    background-color: transparent !important;
+}
+
+
+.ps__thumb-y {
+    background-color: #c7c7c7 !important;
+    border-radius: 6px;
+    width: 6px;
+    right: 2px;
+    position: absolute;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: rgb(246, 245, 245);
+    width: 40%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
