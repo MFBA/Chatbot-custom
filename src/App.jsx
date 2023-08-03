@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import "./styles.scss";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import EmojiPicker from "emoji-picker-react";
 import {
   MainContainer,
   ChatContainer,
@@ -13,6 +14,7 @@ import {
   SendButton,
   AttachmentButton,
   Avatar,
+  Sidebar,
 } from "@chatscope/chat-ui-kit-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -20,8 +22,10 @@ import {
   faThumbsDown,
   faChevronCircleUp,
   faChevronCircleDown,
+  faPaperclip,
 } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./Modal";
+import { faFaceSmile, faFileImage } from "@fortawesome/free-regular-svg-icons";
 
 const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
@@ -41,6 +45,7 @@ function App() {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [openResponseModal, setOpenResponseModal] = useState(false);
+  const [timer, setTimer] = useState(0);
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -53,18 +58,11 @@ function App() {
 
     setMessages(newMessages);
 
-    // Initial system message to determine ChatGPT functionality
-    // How it responds, how it talks, etc.
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
 
   async function processMessageToChatGPT(chatMessages) {
-    // messages is an array of messages
-    // Format messages for chatGPT API
-    // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-    // So we need to reformat
-
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {
@@ -113,6 +111,25 @@ function App() {
   return (
     <div className="App">
       <div style={{ position: "relative", height: "800px", width: "400px" }}>
+        <div
+          style={{
+            height: "300px",
+            overflow: "hidden",
+          }}
+        >
+          {/* <Sidebar>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              sagittis dictum tortor, sed mollis justo lacinia eget. In pharetra
+              volutpat eros, in tempus est pellentesque quis. Vivamus pretium
+              sodales ex at suscipit. In porta libero turpis, sit amet mattis
+              quam vestibulum vel. In non felis eu enim hendrerit fringilla ut
+              in lacus. Quisque leo tortor, feugiat vitae sagittis eget, mattis
+              quis dui. Cras bibendum luctus finibus. Mauris id neque nec nunc
+              malesuada eleifend maximus et enim.
+            </p>
+          </Sidebar> */}
+        </div>
         <MainContainer>
           <Modal
             show={openResponseModal}
@@ -199,13 +216,43 @@ function App() {
                 );
               })}
             </MessageList>
+
             <MessageInput
               placeholder="Type message here"
               onSend={handleSend}
-              attachButton={false}
               sendButton={false}
+              attachButton={false}
             />
           </ChatContainer>
+          <div
+            style={{
+              position: "absolute",
+              bottom: "0",
+              right: "0",
+              margin: "1em",
+              zIndex: "100",
+              display: "flex",
+              gap: "0.8em",
+              color: "grey",
+            }}
+          >
+            <FontAwesomeIcon
+              icon={faFileImage}
+              size={"md"}
+              onClick={() => setOpenResponseModal(true)}
+            />
+            <FontAwesomeIcon
+              icon={faFaceSmile}
+              size={"md"}
+              onClick={() => setOpenResponseModal(true)}
+            />
+            <FontAwesomeIcon
+              icon={faPaperclip}
+              size={"md"}
+              onClick={() => setOpenResponseModal(true)}
+            />
+          </div>
+          <div></div>
         </MainContainer>
       </div>
     </div>

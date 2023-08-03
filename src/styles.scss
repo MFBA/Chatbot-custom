@@ -1,13 +1,16 @@
-.cs-main-container {
-    border: 0px !important;
-    border-radius: 1em !important;
-    -webkit-border-radius: 1em !important;
-    -moz-border-radius: 1em !important;
-    -ms-border-radius: 1em !important;
-    -o-border-radius: 1em !important;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+*{
+    font-family: 'Inter', sans-serif !important;
+ 
+}
 
-    .cs-conversation-header {
-        background-color: #ffffff !important;
+.cs-main-container {
+    border: 0 !important;
+    border-radius: 0 !important;
+    .cs-conversation-header
+{
+        background-color: #502D3C !important;
+        
         
     }
 }
@@ -15,19 +18,25 @@
 
 .cs-conversation-header__content {
     flex-grow: 0 !important;
+    
 
     .cs-conversation-header__user-name {
         height: 18px !important;
+        background-color: transparent !important;
+        color: white !important;
     }
 
     .cs-conversation-header__info{
         font-size: .7em !important; 
         margin-right: 0em !important;
+        background-color: transparent !important;
+        color: white !important;
     }
 }
 
 .cs-conversation-header__back{
     margin-right: 1.5em !important;
+    
 }
 
 
@@ -55,7 +64,7 @@
 }
 
 .cs-button--arrow {
-    color: #4565f3 !important;
+    color: #ffffff !important;
 }
 
 .message-avatar {
@@ -86,7 +95,7 @@
 }
 .cs-message--outgoing .cs-message__content {
     color: rgba(255, 255, 255, 0.87);
-    background-color: #0c5fec !important;
+    background-color: #7e465e !important;
     border-radius: 0.7em !important;
     
 }
@@ -162,7 +171,7 @@
   .modal-main {
     position:fixed;
     background: rgb(246, 245, 245);
-    width: 40%;
+    width: 50vw;
     height: auto;
     top:50%;
     left:50%;
