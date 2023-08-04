@@ -131,18 +131,71 @@ function App() {
             overflow: "hidden",
           }}
         >
-          {/* <Sidebar>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              sagittis dictum tortor, sed mollis justo lacinia eget. In pharetra
-              volutpat eros, in tempus est pellentesque quis. Vivamus pretium
-              sodales ex at suscipit. In porta libero turpis, sit amet mattis
-              quam vestibulum vel. In non felis eu enim hendrerit fringilla ut
-              in lacus. Quisque leo tortor, feugiat vitae sagittis eget, mattis
-              quis dui. Cras bibendum luctus finibus. Mauris id neque nec nunc
-              malesuada eleifend maximus et enim.
-            </p>
-          </Sidebar> */}
+          <Sidebar
+            style={{
+              height: "120px",
+              width: "200px",
+              backgroundColor: "#F9EDEA",
+              borderRadius: "10px",
+              display: "flex",
+              padding: "10px",
+              border: "1.5px solid rgb(255 132 102)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <div
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  backgroundColor: "#F6765E",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "20%",
+                }}
+              >
+                <FontAwesomeIcon icon={faFileImage} size={"1x"} />
+              </div>
+              <div
+                style={{
+                  color: "rgb(45 44 44)",
+                  textAlign: "left",
+                  paddingLeft: "0.5em",
+                  margin: "0px",
+                  fontSize: "0.8em",
+                }}
+              >
+                <p
+                  style={{
+                    margin: "0px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Healthcare Comptitiveness ipsum
+                </p>
+
+                <p
+                  style={{
+                    margin: "0px",
+                    fontWeight: "bold",
+                    color: "#747474",
+                  }}
+                >
+                  Last Updated:
+                </p>
+                <hr
+                  style={{
+                    border: "0.5px solid rgb(255 132 102)",
+                  }}
+                />
+              </div>
+            </div>
+          </Sidebar>
         </div>
         <MainContainer>
           <Modal
@@ -229,7 +282,11 @@ function App() {
                           className="message-logo"
                           src="https://picsum.photos/200"
                         />
-                        <Message key={i} model={message} />
+                        <Message
+                          className="typewriter-animation"
+                          key={i}
+                          model={message}
+                        />
 
                         <div
                           style={{
