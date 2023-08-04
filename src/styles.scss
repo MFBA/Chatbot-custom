@@ -7,6 +7,7 @@
 .cs-main-container {
     .cs-conversation-header{
         background-color: #502D3C !important;
+        padding: 0.8em 0.9em !important;
         
         
     }
@@ -110,7 +111,7 @@
    
     background-color: #fdfeff !important;
     margin-left: 0 !important;
-    padding-bottom: 1.2em !important;
+    padding-bottom: 1.5em !important;
     // padding: 0.6em 0.9em !important;
     // width: 100%;
     
@@ -127,6 +128,7 @@
     // margin-left: 0 !important;
     // display: flex !important;
     align-items: flex-start !important;
+    
 }
 
 .cs-typing-indicator__indicator {
@@ -177,7 +179,7 @@
   .modal-main {
     position:fixed;
     background: rgb(246, 245, 245);
-    width: 50vw;
+    width: 44vw;
     height: auto;
     top:50%;
     left:50%;
@@ -208,35 +210,20 @@
     }
 }
 
-// .typewriter-animation >div > div > div {
-
-//     // color: hsl(0, 0%, 68%);
-    
-//     // letter-spacing: 7px!important;
-//     // overflow: hidden;
-//     border-right: 0px solid transparent;
-//     white-space: nowrap;
-//     animation: typewriter 4s steps(44) 1s 1 normal both,      blinkTextCursor 500ms infinite;
-//     @keyframes typewriter
+.fadein-animation {
+    animation: fadeInFromBottom 0.5s ease-out forwards;
+    position: relative;
    
-// {
-//     from {
-//       width: 0;
-      
-      
-//     }
-//     to {
-//       width: 100%;
-    
- 
-//     }
-//   }
-//   @keyframes blinkTextCursor {
-//     from {
-//       border-right-color: hsl(0, 0%, 80%);
-//     }
-//     to {
-//       border-right-color: transparent;
-//     }
-//   }
-// }
+}
+
+
+@keyframes fadeInFromBottom {
+    from {
+      top: 50px; /* Starting position */
+      opacity: 0; /* Starting opacity */
+    }
+    to {
+      top: 0; /* Final position */
+      opacity: 1; /* Final opacity */
+    }
+  }

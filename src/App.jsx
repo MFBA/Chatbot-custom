@@ -27,7 +27,7 @@ import {
 import Modal from "./Modal";
 import { faFaceSmile, faFileImage } from "@fortawesome/free-regular-svg-icons";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -129,6 +129,9 @@ function App() {
           style={{
             height: "300px",
             overflow: "hidden",
+            position: "absolute",
+            left: "100%",
+            bottom: "0%",
           }}
         >
           <Sidebar
@@ -220,7 +223,7 @@ function App() {
               <textarea
                 style={{
                   borderRadius: "10px",
-                  width: "15em",
+                  width: "30vw",
                   height: "8em",
                   padding: "0.5em",
                   background: "white",
@@ -249,23 +252,17 @@ function App() {
                 ) : null
               }
             >
-              <p
-                style={{ marginTop: "10px", fontSize: "0.8em", color: "grey" }}
-              >
-                {daysOfWeek[new Date().getDay()] +
-                  " " +
-                  new Date().toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: true,
-                  })}
-              </p>
               {messages.map((message, i) => {
                 console.log("messae", message);
                 return (
                   <div
-                    style={{ display: "flex", gap: "0.8em" }}
-                    className="message-avatar"
+                    style={{
+                      display: "flex",
+                      gap: "0.8em",
+                      justifyContent:
+                        message.sender === "ChatGPT" ? "left" : "right",
+                    }}
+                    className="message-avatar fadein-animation"
                   >
                     {message.sender === "ChatGPT" ? (
                       <Avatar src="https://picsum.photos/200" />
@@ -282,35 +279,70 @@ function App() {
                           className="message-logo"
                           src="https://picsum.photos/200"
                         />
-                        <Message
-                          className="typewriter-animation"
-                          key={i}
-                          model={message}
-                        />
+                        <Message key={i} model={message} />
+                        <div style={{ display: "flex" }}>
+                          <div
+                            style={{
+                              display: "flex",
+                              gap: "5px",
+                              marginTop: "5px",
+                              marginLeft: "5px",
+                            }}
+                          >
+                            <FontAwesomeIcon
+                              icon={faChevronCircleUp}
+                              size={"sm"}
+                              onClick={() => setOpenResponseModal(true)}
+                            />
 
-                        <div
-                          style={{
-                            display: "flex",
-                            gap: "5px",
-                            marginTop: "5px",
-                            marginLeft: "5px",
-                          }}
-                        >
-                          <FontAwesomeIcon
-                            icon={faChevronCircleUp}
-                            size={"sm"}
-                            onClick={() => setOpenResponseModal(true)}
-                          />
+                            <FontAwesomeIcon
+                              icon={faChevronCircleDown}
+                              size={"sm"}
+                              onClick={() => setOpenResponseModal(true)}
+                            />
+                          </div>
+                          <p
+                            style={{
+                              margin: "0px",
+                              marginTop: "4px",
+                              marginLeft: "20px",
 
-                          <FontAwesomeIcon
-                            icon={faChevronCircleDown}
-                            size={"sm"}
-                            onClick={() => setOpenResponseModal(true)}
-                          />
+                              fontSize: "0.7em",
+                              color: "grey",
+                            }}
+                          >
+                            {daysOfWeek[new Date().getDay()] +
+                              " " +
+                              new Date().toLocaleTimeString("en-US", {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                hour12: true,
+                              })}
+                          </p>
                         </div>
                       </div>
                     ) : (
-                      <Message key={i} model={message} />
+                      <div>
+                        <Message key={i} model={message} />
+                        <p
+                          style={{
+                            margin: "0px",
+                            marginTop: "4px",
+                            marginLeft: "20px",
+
+                            fontSize: "0.7em",
+                            color: "grey",
+                          }}
+                        >
+                          {daysOfWeek[new Date().getDay()] +
+                            " " +
+                            new Date().toLocaleTimeString("en-US", {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                              hour12: true,
+                            })}
+                        </p>
+                      </div>
                     )}
                   </div>
                 );
@@ -327,7 +359,7 @@ function App() {
           <div
             style={{
               position: "absolute",
-              bottom: "0.6em",
+              bottom: "1em",
               right: "0",
               margin: "1em",
               zIndex: "100",
@@ -347,22 +379,40 @@ function App() {
               bottom: "-10px",
               marginBottom: "10px",
               left: "11em",
-              textDecoration: "underline",
+              // textDecoration: "underline",
 
               textAlign: "center",
               fontSize: "0.7em",
               // margin: "1em",
 
-              zIndex: "100",
+              zIndex: "90",
               display: "flex",
               gap: "0.8em",
               color: "grey",
+              // backgroundColor: "transparent",
+              // boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.75)",
             }}
           >
-            <a style={{ color: "grey" }} href="https://www.google.com">
+            <a
+              style={{ color: "grey", backgroundColor: "transparent" }}
+              href="https://www.google.com"
+            >
               Privacy policy and disclaimer
             </a>
           </div>
+          <div
+            style={{
+              width: "100%",
+              height: "21px",
+              boxShadow: "rgba(0, 0, 0, 0.15) 0px 14px 8px inset",
+              position: "absolute",
+              bottom: "0",
+              backgroundColor: "transparent",
+              //rotate
+              transform: "rotate(180deg)",
+              zIndex: "100",
+            }}
+          ></div>
           {/* </div> */}
         </MainContainer>
       </div>
