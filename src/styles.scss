@@ -87,11 +87,8 @@
     }
 
     .cs-avatar>img  {
-        border-radius: 20% !important;
-        -webkit-border-radius: 20% !important;
-        -moz-border-radius: 20% !important;
-        -ms-border-radius: 20% !important;
-        -o-border-radius: 20% !important;
+        border-radius: 20% ;
+   
 }
 .cs-message__content {
     background-color: #ffffff  !important;  // bot message color
@@ -113,6 +110,7 @@
    
     background-color: #fdfeff !important;
     margin-left: 0 !important;
+    padding-bottom: 1.2em !important;
     // padding: 0.6em 0.9em !important;
     // width: 100%;
     
@@ -185,10 +183,7 @@
     left:50%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+   
 }
   
   .display-block {
@@ -198,3 +193,17 @@
   .display-none {
     display: none;
   }
+
+
+  
+.message-logo{
+    margin-bottom: -2.4em !important;
+    >img {
+
+        position: relative;
+        right: 1.1em !important;
+        width: 1em !important;
+        height: 1em !important;
+        border-radius: 50% !important;
+    }
+}

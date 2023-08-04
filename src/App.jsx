@@ -27,7 +27,7 @@ import {
 import Modal from "./Modal";
 import { faFaceSmile, faFileImage } from "@fortawesome/free-regular-svg-icons";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -112,6 +112,15 @@ function App() {
         setOpenErrorModal(true);
       });
   }
+  const [daysOfWeek, setDaysOfWeek] = useState([
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ]);
 
   return (
     <div className="App">
@@ -187,6 +196,17 @@ function App() {
                 ) : null
               }
             >
+              <p
+                style={{ marginTop: "10px", fontSize: "0.8em", color: "grey" }}
+              >
+                {daysOfWeek[new Date().getDay()] +
+                  " " +
+                  new Date().toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+              </p>
               {messages.map((message, i) => {
                 console.log("messae", message);
                 return (
@@ -205,7 +225,12 @@ function App() {
                           alignItems: "flex-start",
                         }}
                       >
+                        <Avatar
+                          className="message-logo"
+                          src="https://picsum.photos/200"
+                        />
                         <Message key={i} model={message} />
+
                         <div
                           style={{
                             display: "flex",
@@ -245,7 +270,7 @@ function App() {
           <div
             style={{
               position: "absolute",
-              bottom: "0",
+              bottom: "0.6em",
               right: "0",
               margin: "1em",
               zIndex: "100",
@@ -258,7 +283,30 @@ function App() {
             <FontAwesomeIcon icon={faFaceSmile} size={"md"} />
             <FontAwesomeIcon icon={faPaperclip} size={"md"} />
           </div>
-          <div></div>
+          {/* <div style="position: relative; width: 0; height: 0"> */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-10px",
+              marginBottom: "10px",
+              left: "11em",
+              textDecoration: "underline",
+
+              textAlign: "center",
+              fontSize: "0.7em",
+              // margin: "1em",
+
+              zIndex: "100",
+              display: "flex",
+              gap: "0.8em",
+              color: "grey",
+            }}
+          >
+            <a style={{ color: "grey" }} href="https://www.google.com">
+              Privacy policy and disclaimer
+            </a>
+          </div>
+          {/* </div> */}
         </MainContainer>
       </div>
     </div>
