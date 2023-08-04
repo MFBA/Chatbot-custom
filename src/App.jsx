@@ -290,13 +290,13 @@ function App() {
                             }}
                           >
                             <FontAwesomeIcon
-                              icon={faChevronCircleUp}
+                              icon={faThumbsUp}
                               size={"sm"}
                               onClick={() => setOpenResponseModal(true)}
                             />
 
                             <FontAwesomeIcon
-                              icon={faChevronCircleDown}
+                              icon={faThumbsDown}
                               size={"sm"}
                               onClick={() => setOpenResponseModal(true)}
                             />
