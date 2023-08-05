@@ -9,11 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ashwamegh/react-link-preview": "^0.3.0",
     "@chatscope/chat-ui-kit-react": "^1.10.1",
+    "@dhaiwat10/react-link-preview": "^1.15.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@phosphor-icons/react": "^2.0.10",
     "emoji-picker-react": "^4.4.10",
+    "link-preview-js": "^3.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-simple-chatbot": "^0.6.1",

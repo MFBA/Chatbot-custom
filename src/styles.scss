@@ -25,7 +25,7 @@
     
 
     .cs-conversation-header__user-name {
-        height: 18px !important;
+        // height: 18px !important;
         background-color: transparent !important;
         color: white !important;
     }
@@ -94,6 +94,8 @@
 .cs-message__content {
     background-color: #ffffff  !important;  // bot message color
     text-align: left !important;
+   margin-top: 0.2em;
+
 }
 .cs-message--outgoing .cs-message__content {
     color: rgba(255, 255, 255, 0.87);
@@ -129,6 +131,11 @@
     // display: flex !important;
     align-items: flex-start !important;
     
+    
+}
+
+.cs-message-input {
+    width: 82% !important;
 }
 
 .cs-typing-indicator__indicator {
@@ -227,3 +234,24 @@
       opacity: 1; /* Final opacity */
     }
   }
+
+  .chat-widget {
+    //animationtominimizeinthechatwidget
+    animation: closeWidget 0.5s forwards;
+}
+
+
+@keyframes closeWidget {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+}
