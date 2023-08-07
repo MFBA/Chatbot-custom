@@ -32,7 +32,7 @@ import "@ashwamegh/react-link-preview/dist/index.css";
 import Modal from "./Modal";
 import { faFaceSmile, faFileImage } from "@fortawesome/free-regular-svg-icons";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -167,7 +167,7 @@ function App() {
     getLinkPreview(
       "https://www.workday.com/en-us/customer-stories.html"
     ).then((data) => setLinkPreview(data));
-  }, []);
+  }, [showSideBox]);
 
   return (
     <div className="App">
